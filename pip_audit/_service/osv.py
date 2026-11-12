@@ -4,7 +4,6 @@ Functionality for using the [OSV](https://osv.dev/) API as a `VulnerabilityServi
 
 from __future__ import annotations
 
-import json
 import logging
 from pathlib import Path
 from typing import Any, cast
@@ -69,7 +68,7 @@ class OsvService(VulnerabilityService):
         try:
             response: requests.Response = self.session.post(
                 url=self.osv_url,
-                data=json.dumps(query),
+                json=query,
                 timeout=self.timeout,
             )
             response.raise_for_status()

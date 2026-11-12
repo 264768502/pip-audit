@@ -10,6 +10,9 @@ All versions prior to 0.0.9 are untracked.
 
 ### Fixed
 
+* OSV query requests now send `Content-Type: application/json`, allowing custom
+  OSV services that require a JSON content type to accept them.
+
 * Editable requirements skipped with `--skip-editable` no longer require a hash
   when auditing hashed requirements files
   ([#1024](https://github.com/pypa/pip-audit/issues/1024))
